@@ -1,0 +1,126 @@
+listen_addresses = '*'
+port = 5432
+max_connections = 300
+
+shared_buffers = 20GB
+work_mem = 1GB
+maintenance_work_mem = 4GB
+effective_cache_size = 50GB
+
+wal_level = logical
+max_logical_replication_workers = 8
+max_worker_processes = 42
+max_parallel_workers = 16
+max_parallel_workers_per_gather = 16
+
+random_page_cost = 1.1
+seq_page_cost = 1.0
+cpu_tuple_cost = 0.01
+cpu_index_tuple_cost = 0.005
+cpu_operator_cost = 0.0025
+effective_io_concurrency = 320
+default_statistics_target = 500
+
+checkpoint_timeout = 30min
+checkpoint_completion_target = 0.9
+checkpoint_warning = 60s
+wal_buffers = 128MB
+
+enable_partitionwise_join = off
+enable_partitionwise_aggregate = off
+enable_parallel_hash = on
+enable_parallel_append = on
+enable_parallel_union = on
+enable_parallel_scan = on
+
+enable_material = on
+enable_hashagg = on
+enable_hashjoin = on
+enable_nestloop = on
+enable_mergejoin = on
+enable_indexscan = on
+enable_indexonlyscan = on
+enable_bitmapscan = on
+
+log_destination = 'stderr'
+logging_collector = on
+log_directory = 'log'
+log_filename = 'postgresql-replica-%Y-%m-%d_%H%M%S.log'
+log_rotation_age = 1d
+log_rotation_size = 100MB
+log_min_duration_statement = 5000
+log_checkpoints = on
+log_connections = on
+log_disconnections = on
+log_lock_waits = on
+log_temp_files = 0
+log_autovacuum_min_duration = 0
+
+autovacuum = on
+autovacuum_max_workers = 8
+autovacuum_naptime = 15s
+autovacuum_vacuum_threshold = 100
+autovacuum_analyze_threshold = 100
+autovacuum_vacuum_scale_factor = 0.3
+autovacuum_analyze_scale_factor = 0.2
+
+synchronous_commit = off
+commit_delay = 0
+commit_siblings = 1
+
+tcp_keepalives_idle = 600
+tcp_keepalives_interval = 30
+tcp_keepalives_count = 3
+
+timezone = 'UTC'
+lc_messages = 'en_US.UTF-8'
+lc_monetary = 'en_US.UTF-8'
+lc_numeric = 'en_US.UTF-8'
+lc_time = 'en_US.UTF-8'
+default_text_search_config = 'pg_catalog.english'
+
+wal_level = minimal
+max_wal_senders = 0
+max_replication_slots = 0
+
+ssl = on
+ssl_cert_file = '/etc/ssl/certs/ssl-cert-snakeoil.pem'
+ssl_key_file = '/etc/ssl/private/ssl-cert-snakeoil.key'
+ssl_min_protocol_version = 'TLSv1.2'
+ssl_ciphers = 'HIGH:MEDIUM:+3DES:!aNULL'
+
+tcp_send_buffer_size = 16MB
+tcp_recv_buffer_size = 16MB
+
+huge_pages = off
+deadlock_timeout = 1s
+lock_timeout = 0
+statement_timeout = 0
+io_timeout = 30s
+effective_io_concurrency = 320
+checkpoint_timeout = 30min
+wal_buffers = 128MB
+
+temp_file_limit = 0
+log_temp_files = 0
+track_activities = on
+track_functions = all
+track_io_timing = on
+pg_stat_statements.track = all
+
+wal_block_size = 8192
+idle_in_transaction_session_timeout = 0
+log_min_duration_statement = 5000
+tcp_keepalives_idle = 600
+tcp_keepalives_interval = 30
+tcp_keepalives_count = 3
+log_checkpoints = on
+log_connections = on
+log_disconnections = on
+log_lock_waits = on
+log_temp_files = 0
+effective_io_concurrency = 320
+random_page_cost = 1.1
+seq_page_cost = 1.0
+checkpoint_timeout = 30min
+checkpoint_completion_target = 0.9
